@@ -1,0 +1,170 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+/* Diğer CSS stilleri buraya */
+
+/* Kartların bulunduğu ana konteyner */
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start; /* Kartları sola hizala */
+}
+
+/* Her bir kart */
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* İçeriği kartın üst kısmında hizala */
+  align-items: center;
+  width: calc(25% - 10px); /* Ekran genişliğine göre kartların genişliğini hesapla */
+  margin-top: 30px;
+  margin-left: 10px;
+  height: 15rem;
+  background-color: transparent;
+  text-align: center;
+  box-sizing: border-box;
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+  overflow: hidden; /* Kartın genel taşmasını gizler */
+}
+
+/* Kartın içeriği */
+.card-body {
+  width: 100%;
+  height: 100%;
+  overflow-y: auto; /* Dikey kaydırmayı etkinleştirir */
+  padding: 10px;
+}
+
+/* Kart başlığı */
+.card-title {
+  margin-bottom: 10px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  overflow: hidden;
+  text-overflow: ellipsis; /* Uzun başlıkları kırpmak için */
+  white-space: nowrap; /* Tek satırda tutmak için */
+}
+
+/* Kart metni */
+.card-text {
+  overflow: hidden; /* Taşmayı gizlemek için */
+  text-overflow: ellipsis; /* Uzun metinleri kırp */
+  word-wrap: break-word; /* Uzun kelimeleri kırmak için */
+}
+
+/* Ekran boyutu 768px'e kadar olan durumlar için */
+@media (max-width: 768px) {
+  .card {
+    width: calc(50% - 10px); /* Ekran genişliğine göre kartların genişliğini hesapla */
+  }
+}
+
+/* Not ekleme ve detay pop-up'larının arka planı */
+.add-popup-overlay, .detail-popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Yarı saydamlık sağlar */
+  z-index: 999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden; /* Taşmayı gizler */
+}
+
+/* Not ekleme ve detay pop-up'ları */
+.add-popup, .detail-popup {
+  position: relative;
+  background-color: #fff;
+  padding: 30px 20px 20px 20px; /* İçerik düzeni için padding'i artırdık */
+  border-radius: 8px;
+  overflow: hidden; /* Taşmayı gizler */
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
+}
+
+/* Not ekleme pop-up'ı */
+.add-popup {
+  width: 500px; /* Popup genişliğini artırdık */
+}
+
+/* Detay pop-up'ı */
+.detail-popup {
+  width: 500px;
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Detay pop-up içeriği */
+.detail-popup-content {
+  overflow-y: auto; /* Dikey kaydırmayı etkinleştirir */
+  flex-grow: 1;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+/* Detay pop-up alt kısmı */
+.detail-popup-footer {
+  margin-top: auto;
+}
+
+/* Kapatma düğmeleri */
+.add-popup .close-button, .detail-popup .close-button {
+  position: absolute;
+  top: 2px; /* Üst kenara biraz yaklaştır */
+  right: 20px; /* Sağ kenara biraz yaklaştır */
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+/* Kapatma simgeleri */
+.add-popup .close-icon, .detail-popup .close-icon {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+/* Giriş alanları ve metin alanları */
+.add-popup input, .add-popup textarea {
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* Uyarı metni */
+.add-popup .warning {
+  color: red;
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+/* Kategori renkleri */
+.card.shopping {
+  background-color: #FFCDD2; /* Pastel Kırmızı */
+}
+
+.card.lesson {
+  background-color: #BBDEFB; /* Pastel Mavi */
+}
+
+.card.personal {
+  background-color: #C8E6C9; /* Pastel Yeşil */
+}
+
+.card.recipes {
+  background-color: #FFECB3; /* Pastel Sarı */
+}
+
+.card.links {
+  background-color: #E1BEE7; /* Pastel Mor */
+}
+
+.card.appointments {
+  background-color: #B2EBF2; /* Pastel Turkuaz */
+}
